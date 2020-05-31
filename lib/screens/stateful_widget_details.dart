@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 
-/**
+/**  * // https://medium.com/the-web-tub/making-a-todo-app-with-flutter-5c63dab88190
+
+ * 
  * 1/ State is a generic class that is imported from 'material/dart'
  * 
- * 2/ In here, we have 2 classes
+ * 2/ In here, we have 2 classes - one for widget, state for storing State easily
+ * => Since we create a new widget with every change, we cannot store any state in the 
+ *    widget itself, as it will be lost with the next change. 
+ *    This is why we need a separate State class
  *  Cuz, Flutter works internally
     
     class StatefulDetails extends StatefulWidget {}
@@ -25,11 +30,11 @@ import 'package:flutter/material.dart';
     4/ createState() return State Object with State type
     
     => Now, the build() method is inside the <State>, not inside the widget
-    => Flutter will  not re-render
+    => Flutter will not re-render
 
-    5/ We have to tell Flutter, We're about to change State
-     and when State is changed
-     => it should re-render this widget  => using setState() {}
+    5/ using setState() {} 
+     => We have to tell Flutter, We're about to change State and when State is changed
+     => it should re-render this widget => run build() method
 
         void onPressButton() {
           setState(() {
